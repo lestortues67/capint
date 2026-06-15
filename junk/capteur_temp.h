@@ -22,6 +22,18 @@ typedef struct {
 extern uint8_t capteur_est_pret; 
 
 // 3. Prototypes des fonctions publiques (l'interface du module)
+// Les déclarations des fonctions : 
+int adc_read_16x(adc_oneshot_unit_handle_t p_adc_handle, gpio_num_t p_mesure_u_batterie_gpio);
+int get_tension_piles(void);
+
+
+void adc_init(void);
+int adc_read_raw(void);
+float adc_read_voltage(void);
+
+
+
+
 void capteur_temp_init(int pin_gpio);
 donnees_capteur_t capteur_temp_lire(void);
 

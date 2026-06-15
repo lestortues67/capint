@@ -4,7 +4,8 @@ Objet : Build OK
 */
 #include <stdio.h>
 #include "esp_log.h" // Pour les fonctions de log d'ESP-IDF
-#include "capteur_temp.h"
+#include "capteurs.h"
+#include "tasks.h"
 
 static const char *TAG = "MY_APP";
 
@@ -12,4 +13,17 @@ void app_main(void)
 {
 	ESP_LOGI(TAG, "Application principale (app_main) démarrée.");
 
+	// Init ADC 
+	adc_init();
+	
+	//
+    // Création de la task ADC
+    //
+    xTaskCreate(
+        task_adc,
+        "task_adc",
+        4096,
+        NULL,
+        5,
+        NULL);
 }
