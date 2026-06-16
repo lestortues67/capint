@@ -11,7 +11,7 @@ description : un exemple de HEADER fourni par GEMINI
 
 #include <stdint.h>
 #include "esp_adc/adc_oneshot.h"
-
+#include "driver/gpio.h"
 
 
 
@@ -43,7 +43,7 @@ typedef struct {
 // 3. Prototypes des fonctions publiques (l'interface du module)
 // capteur d'intrusion 
 void init_capteur_intrusion_INT_NEG(void);
-void init_capteur_intrusion_INT_POS(void)
+void init_capteur_intrusion_INT_POS(void);
 uint8_t get_capteur_intrusion_level(void);
 
 // mesure U piles

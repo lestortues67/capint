@@ -9,8 +9,17 @@ Objet : Build OK
 
 static const char *TAG = "MY_APP";
 
+void setup(void){
+    /* Ressembler à Arduino : 
+    Dans Arduino deux fonctions sont présentes : 
+    setup() et app_main(). 
+    */
+    
+}
+
 void app_main(void)
 {
+    setup();
 	ESP_LOGI(TAG, "Application principale (app_main) démarrée.");
 
 	// Init ADC 
